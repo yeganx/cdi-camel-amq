@@ -33,7 +33,7 @@
 
     <!-- dependency versions -->
     <activemq.version>5.12.1</activemq.version>
-    <fabric8.version>2.2.143</fabric8.version>
+    <fabric8.version>2.2.144</fabric8.version>
     <camel.version>2.17.2</camel.version>
     <weld.version>2.3.3.Final</weld.version>
 
