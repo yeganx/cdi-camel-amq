@@ -15,21 +15,9 @@
  */
 package io.fabric8.quickstarts.camelcdi;
 
-import javax.inject.Inject;
-
-import io.fabric8.annotations.ServiceName;
-import io.fabric8.arquillian.kubernetes.Session;
-import io.fabric8.cdi.deltaspike.DeltaspikeTestBase;
-import io.fabric8.kubernetes.api.model.Pod;
 import io.fabric8.kubernetes.client.KubernetesClient;
-import io.fabric8.quickstarts.camelcdi.mq.ActiveMQConfigurer;
-
-import org.apache.activemq.camel.component.ActiveMQComponent;
-import org.assertj.core.api.Condition;
-import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -41,30 +29,8 @@ public class KubernetesIntegrationKT {
     @ArquillianResource
     KubernetesClient client;
 
-    @ArquillianResource
-    Session session;
-
-    @Inject
-    @ServiceName("fabric8mq")
-    ActiveMQComponent activeMQComponent;
-
-    @Deployment
-    public static WebArchive createDeployment() {
-        return DeltaspikeTestBase.createDeployment()
-                .addClasses(DeltaspikeTestBase.getDeltaSpikeHolders())
-                .addClasses(ActiveMQComponentFactory.class, ActiveMQConfigurer.class);
-    }
-
     @Test
     public void testAppProvisionsRunningPods() throws Exception {
-        assertThat(client).pods()
-                .runningStatus()
-                .filterNamespace(session.getNamespace())
-                .haveAtLeast(1, new Condition<Pod>() {
-                    @Override
-                    public boolean matches(Pod podSchema) {
-                        return true;
-                    }
-                });
+        assertThat(client).deployments().pods().isPodReadyForPeriod();
     }
 }

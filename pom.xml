@@ -34,7 +34,7 @@
     <!-- dependency versions -->
     <activemq.version>5.12.1</activemq.version>
     <fabric8.version>2.2.144</fabric8.version>
-    <fabric8-ipaas.version>2.2.103</fabric8-ipaas.version>
+    <fabric8-ipaas.version>2.2.146</fabric8-ipaas.version>
     <camel.version>2.17.2</camel.version>
     <weld.version>2.3.3.Final</weld.version>
 
@@ -166,6 +166,13 @@
 
   <build>
     <finalName>${project.artifactId}</finalName>
+
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
 
     <plugins>
       <!-- Compiler plugin enforces Java 1.7 compatibility and activates annotation processors -->
