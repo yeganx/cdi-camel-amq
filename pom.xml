@@ -34,7 +34,7 @@
     <!-- dependency versions -->
     <activemq.version>5.12.1</activemq.version>
     <fabric8.version>2.2.170</fabric8.version>
-    <fabric8-ipaas.version>2.2.157</fabric8-ipaas.version>
+    <fabric8-ipaas.version>2.2.158</fabric8-ipaas.version>
     <camel.version>2.18.0</camel.version>
     <weld.version>2.3.3.Final</weld.version>
 
