@@ -50,8 +50,8 @@ public class ActiveMQConfig {
     private static final String DISABLE_TIMESTAPMS_BY_DEFAULT = "DISABLE_TIMESTAPMS_BY_DEFAULT";
     private static final String USE_ASYNC_SEND = "USE_ASYNC_SEND";
     private static final String USE_COMPRESSION = "USE_COMPRESSION";
-    private static final String USERNAME="USERNAME";
-    private static final String PASSWORD="PASSWORD";
+    private static final String USERNAME="ossl";
+    private static final String PASSWORD="ossl";
 
     @Inject
     @ConfigProperty(name = DISPATCH_ASYNC, defaultValue = "true")
