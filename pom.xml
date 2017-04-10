@@ -61,6 +61,7 @@
         <name>My internal repository</name>
         <url>http://192.168.0.20:8081/nexus/content/repositories/releases</url>
     </repository>
+    </distributionManagement>
 
   <dependencyManagement>
     <dependencies>
