@@ -37,7 +37,7 @@
     <repository>
         <id>my-releases</id>
         <name>My internal repository</name>
-        <url>http://192.168.0.20:8081/nexus/content/repositories/releases</url>
+        <url>http://192.168.0.20:8081/#browse/browse/assets:maven-public</url>
     </repository>
 </distributionManagement>
   <properties>
